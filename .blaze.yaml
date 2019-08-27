@@ -1,0 +1,520 @@
+project:
+  status: active
+  name: digitalhydra/gatsby-tailwind-serif
+  buildStatus: starting
+  external: false
+  provider: github
+  deployment:
+    contentDirectory:
+      - content
+      - src/images
+      - static
+    buildCommand: yarn build
+    builds:
+      master:
+        weight: 1
+        id: _edj8sl7bl
+        environmentVariables: []
+        branch: master
+    developmentCommand: yarn develop
+    productionBranch: master
+    publishDirectory: public
+    packager: yarn
+  type: gatsby
+schemas:
+  - type: content
+    definitions:
+      schema:
+        name: Team
+        id: team
+      fields:
+        - type: string
+          required: true
+          value: ''
+          id: title
+          orderable: true
+          removable: true
+          system: false
+          widget: text
+          name: Title
+        - removable: true
+          system: false
+          widget: SlateEditor
+          name: Content
+          type: string
+          required: true
+          value: ''
+          id: content
+          orderable: true
+        - orderable: true
+          removable: true
+          system: false
+          widget: MediaSchema
+          name: Image
+          type: string
+          required: true
+          value: ''
+          id: image
+        - orderable: true
+          removable: true
+          system: false
+          widget: DatePicker
+          name: Date
+          type: string
+          required: true
+          value: ''
+          id: date
+        - orderable: true
+          removable: true
+          system: false
+          widget: checkbox
+          name: Draft
+          type: boolean
+          required: true
+          value: ''
+          id: draft
+        - orderable: true
+          removable: true
+          system: false
+          widget: text
+          name: Email
+          type: string
+          required: true
+          value: ''
+          id: email
+        - orderable: true
+          removable: true
+          system: false
+          widget: text
+          name: Jobtitle
+          type: string
+          required: true
+          value: ''
+          id: jobtitle
+        - type: string
+          required: true
+          value: ''
+          id: linkedinurl
+          orderable: true
+          removable: true
+          system: false
+          widget: text
+          name: Linkedinurl
+        - type: string
+          required: true
+          value: ''
+          id: path
+          orderable: true
+          removable: true
+          system: false
+          widget: text
+          name: Path
+        - removable: true
+          system: false
+          widget: updown
+          name: Weight
+          type: string
+          required: true
+          value: ''
+          id: weight
+          orderable: true
+    schema:
+      json:
+        required:
+          - title
+          - content
+          - image
+          - date
+          - draft
+          - email
+          - jobtitle
+          - linkedinurl
+          - path
+          - weight
+        type: object
+        properties:
+          content:
+            default: ''
+            type: string
+            title: Content
+          jobtitle:
+            default: ''
+            type: string
+            title: Jobtitle
+          date:
+            title: Date
+            default: ''
+            type: string
+          weight:
+            title: Weight
+            default: ''
+            type: string
+          path:
+            default: ''
+            type: string
+            title: Path
+          draft:
+            title: Draft
+            default: ''
+            type: boolean
+          title:
+            title: Title
+            default: ''
+            type: string
+          linkedinurl:
+            default: ''
+            type: string
+            title: Linkedinurl
+          image:
+            default: ''
+            type: string
+            title: Image
+          email:
+            default: ''
+            type: string
+            title: Email
+      name: Team
+      ui:
+        image:
+          'ui:widget': MediaSchema
+        email:
+          'ui:widget': text
+        'ui:order':
+          - title
+          - content
+          - image
+          - date
+          - draft
+          - email
+          - jobtitle
+          - linkedinurl
+          - path
+          - weight
+          - '*'
+        content:
+          'ui:widget': SlateEditor
+        jobtitle:
+          'ui:widget': text
+        date:
+          'ui:widget': DatePicker
+        weight:
+          'ui:widget': updown
+        path:
+          'ui:widget': text
+        draft:
+          'ui:widget': checkbox
+        title:
+          'ui:widget': text
+        linkedinurl:
+          'ui:widget': text
+  - type: content
+    definitions:
+      fields:
+        - orderable: true
+          removable: true
+          system: false
+          widget: text
+          name: Title
+          type: string
+          required: true
+          value: ''
+          id: title
+        - widget: SlateEditor
+          name: Content
+          type: string
+          required: true
+          value: ''
+          id: content
+          orderable: true
+          removable: true
+          system: false
+        - removable: true
+          system: false
+          widget: MediaSchema
+          name: Image
+          type: string
+          required: true
+          value: ''
+          id: image
+          orderable: true
+        - type: string
+          required: true
+          value: ''
+          id: date
+          orderable: true
+          removable: true
+          system: false
+          widget: DatePicker
+          name: Date
+        - orderable: true
+          removable: true
+          system: false
+          widget: text
+          name: Business
+          type: string
+          required: true
+          value: ''
+          id: business
+        - orderable: true
+          removable: true
+          system: false
+          widget: text
+          name: Businessurl
+          type: string
+          required: true
+          value: ''
+          id: businessurl
+        - widget: checkbox
+          name: Draft
+          type: boolean
+          required: true
+          value: ''
+          id: draft
+          orderable: true
+          removable: true
+          system: false
+        - type: string
+          required: true
+          value: ''
+          id: jobtitle
+          orderable: true
+          removable: true
+          system: false
+          widget: text
+          name: Jobtitle
+        - widget: text
+          name: Name
+          type: string
+          required: true
+          value: ''
+          id: name
+          orderable: true
+          removable: true
+          system: false
+        - orderable: true
+          removable: true
+          system: false
+          widget: text
+          name: Path
+          type: string
+          required: true
+          value: ''
+          id: path
+      schema:
+        name: Testimonial
+        id: testimonial
+    schema:
+      json:
+        required:
+          - title
+          - content
+          - image
+          - date
+          - business
+          - businessurl
+          - draft
+          - jobtitle
+          - name
+          - path
+        type: object
+        properties:
+          content:
+            default: ''
+            type: string
+            title: Content
+          jobtitle:
+            title: Jobtitle
+            default: ''
+            type: string
+          date:
+            title: Date
+            default: ''
+            type: string
+          path:
+            title: Path
+            default: ''
+            type: string
+          draft:
+            title: Draft
+            default: ''
+            type: boolean
+          title:
+            default: ''
+            type: string
+            title: Title
+          business:
+            default: ''
+            type: string
+            title: Business
+          image:
+            default: ''
+            type: string
+            title: Image
+          businessurl:
+            default: ''
+            type: string
+            title: Businessurl
+          name:
+            title: Name
+            default: ''
+            type: string
+      name: Testimonial
+      ui:
+        'ui:order':
+          - title
+          - content
+          - image
+          - date
+          - business
+          - businessurl
+          - draft
+          - jobtitle
+          - name
+          - path
+          - '*'
+        content:
+          'ui:widget': SlateEditor
+        jobtitle:
+          'ui:widget': text
+        date:
+          'ui:widget': DatePicker
+        path:
+          'ui:widget': text
+        draft:
+          'ui:widget': checkbox
+        title:
+          'ui:widget': text
+        business:
+          'ui:widget': text
+        image:
+          'ui:widget': MediaSchema
+        businessurl:
+          'ui:widget': text
+        name:
+          'ui:widget': text
+  - type: content
+    definitions:
+      schema:
+        name: Service
+        id: service
+      fields:
+        - orderable: true
+          removable: true
+          system: false
+          widget: text
+          name: Title
+          type: string
+          required: true
+          value: ''
+          id: title
+        - widget: SlateEditor
+          name: Content
+          type: string
+          required: true
+          value: ''
+          id: content
+          orderable: true
+          removable: true
+          system: false
+        - widget: MediaSchema
+          name: Image
+          type: string
+          required: true
+          value: ''
+          id: image
+          orderable: true
+          removable: true
+          system: false
+        - orderable: true
+          removable: true
+          system: false
+          widget: DatePicker
+          name: Date
+          type: string
+          required: true
+          value: ''
+          id: date
+        - orderable: true
+          removable: true
+          system: false
+          widget: text
+          name: Path
+          type: string
+          required: true
+          value: ''
+          id: path
+    schema:
+      ui:
+        'ui:order':
+          - title
+          - content
+          - image
+          - date
+          - path
+          - '*'
+        content:
+          'ui:widget': SlateEditor
+        date:
+          'ui:widget': DatePicker
+        path:
+          'ui:widget': text
+        title:
+          'ui:widget': text
+        image:
+          'ui:widget': MediaSchema
+      json:
+        required:
+          - title
+          - content
+          - image
+          - date
+          - path
+        type: object
+        properties:
+          content:
+            title: Content
+            default: ''
+            type: string
+          date:
+            default: ''
+            type: string
+            title: Date
+          path:
+            title: Path
+            default: ''
+            type: string
+          title:
+            default: ''
+            type: string
+            title: Title
+          image:
+            title: Image
+            default: ''
+            type: string
+      name: Service
+mapping:
+  content:
+    - schema: team
+      path: content/team/peter-van-eijk.md
+    - schema: testimonial
+      path: content/testimonials/lion-creative.md
+    - schema: team
+      path: content/team/sage-kirk.md
+    - schema: service
+      path: content/services/accounting.md
+    - schema: testimonial
+      path: content/testimonials/thaistyle-asian.md
+    - schema: service
+      path: content/services/business-advisory.md
+    - schema: testimonial
+      path: content/testimonials/mikes-auto-parts.md
+    - schema: service
+      path: content/services/tax-preperation.md
+    - schema: service
+      path: content/services/mergers.md
+    - schema: service
+      path: content/services/superannuation.md
+    - schema: service
+      path: content/services/business-sales.md
+  dataset: []
+  form: []
